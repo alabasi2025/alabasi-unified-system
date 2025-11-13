@@ -1,0 +1,66 @@
+{
+  "module": {
+    "id": "accounting",
+    "name": "Accounting",
+    "displayName": "وحدة المحاسبة",
+    "displayNameEn": "Accounting Module",
+    "version": "1.0.0",
+    "required": false,
+    "dependencies": ["core"],
+    "description": "وحدة محاسبية متكاملة تدعم دليل الحسابات، القيود اليومية، سندات القبض والصرف، والحسابات التحليلية مع دعم Multi-Tenancy والهيكلية الهرمية",
+    "descriptionEn": "Comprehensive accounting module with chart of accounts, journal entries, vouchers, and analytical accounts with Multi-Tenancy support"
+  },
+  "database": {
+    "name": "alabasi_accounting",
+    "tables": [
+      "account_types",
+      "chart_of_accounts",
+      "funds",
+      "banks",
+      "cashiers",
+      "customers",
+      "suppliers",
+      "journal_entries",
+      "journal_entry_lines",
+      "receipt_vouchers",
+      "payment_vouchers",
+      "intermediary_accounts"
+    ],
+    "schemaFile": "schema.ts"
+  },
+  "features": [
+    "دليل الحسابات المرن (Chart of Accounts)",
+    "الحسابات التحليلية (Analytical Accounts)",
+    "القيود اليومية (Journal Entries)",
+    "سندات القبض (Receipt Vouchers)",
+    "سندات الصرف (Payment Vouchers)",
+    "الحسابات الوسيطة (Intermediary Accounts)",
+    "دعم Multi-Tenancy",
+    "دعم الهيكلية الهرمية (Unit-Organization-Branch)",
+    "دعم العملات المتعددة",
+    "التقارير المالية"
+  ],
+  "routes": [
+    "/api/accounting/chart-of-accounts",
+    "/api/accounting/account-types",
+    "/api/accounting/funds",
+    "/api/accounting/banks",
+    "/api/accounting/cashiers",
+    "/api/accounting/customers",
+    "/api/accounting/suppliers",
+    "/api/accounting/journal-entries",
+    "/api/accounting/receipt-vouchers",
+    "/api/accounting/payment-vouchers",
+    "/api/accounting/intermediary-accounts",
+    "/api/accounting/reports"
+  ],
+  "permissions": [
+    "accounting.view",
+    "accounting.create",
+    "accounting.update",
+    "accounting.delete",
+    "accounting.post_entries",
+    "accounting.cancel_entries",
+    "accounting.view_reports"
+  ]
+}
