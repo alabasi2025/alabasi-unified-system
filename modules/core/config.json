@@ -1,0 +1,37 @@
+{
+  "module": {
+    "id": "core",
+    "name": "Core",
+    "displayName": "الوحدة الأساسية",
+    "displayNameEn": "Core Module",
+    "version": "1.0.0",
+    "required": true,
+    "dependencies": [],
+    "description": "الوحدة الأساسية للنظام - تحتوي على إدارة المستخدمين والوحدات والمؤسسات والفروع",
+    "descriptionEn": "Core system module - Contains user management, units, organizations, and branches"
+  },
+  "database": {
+    "tables": [
+      "users",
+      "units",
+      "organizations",
+      "branches",
+      "currencies"
+    ],
+    "schemaFile": "schema.ts"
+  },
+  "features": [
+    "إدارة المستخدمين",
+    "إدارة الوحدات المحاسبية",
+    "إدارة المؤسسات",
+    "إدارة الفروع",
+    "إدارة العملات"
+  ],
+  "routes": [
+    "/api/users",
+    "/api/units",
+    "/api/organizations",
+    "/api/branches",
+    "/api/currencies"
+  ]
+}
