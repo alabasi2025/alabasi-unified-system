@@ -24,7 +24,7 @@ import { useAuth } from "@/_core/hooks/useAuth";
 
 export default function Dashboard() {
   const [, setLocation] = useLocation();
-  const { user } = useAuth();
+  const { user } = useAuth({ redirectOnUnauthenticated: false });
   const { data: stats, isLoading } = trpc.dashboard.stats.useQuery();
 
   if (isLoading) {
