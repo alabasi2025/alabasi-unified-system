@@ -1,13 +1,11 @@
 import { defineConfig } from "drizzle-kit";
 
-const connectionString = process.env.DATABASE_URL;
-if (!connectionString) {
-  throw new Error("DATABASE_URL is required to run drizzle commands");
-}
+// يمكن استخدام DATABASE_URL أو الاتصال المحلي
+const connectionString = process.env.DATABASE_URL || "mysql://alabasi:alabasi123@localhost/alabasi_unified";
 
 export default defineConfig({
   schema: "./drizzle/schema.ts",
-  out: "./drizzle",
+  out: "./drizzle/migrations",
   dialect: "mysql",
   dbCredentials: {
     url: connectionString,

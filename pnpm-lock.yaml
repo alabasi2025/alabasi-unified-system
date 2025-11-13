@@ -126,7 +126,7 @@ importers:
         specifier: ^17.2.2
         version: 17.2.3
       drizzle-orm:
-        specifier: ^0.44.5
+        specifier: ^0.44.6
         version: 0.44.6(mysql2@3.15.1)
       embla-carousel-react:
         specifier: ^8.6.0
@@ -147,7 +147,7 @@ importers:
         specifier: ^0.453.0
         version: 0.453.0(react@19.2.0)
       mysql2:
-        specifier: ^3.15.0
+        specifier: ^3.15.1
         version: 3.15.1
       nanoid:
         specifier: ^5.1.5
@@ -235,7 +235,7 @@ importers:
         specifier: ^10.4.20
         version: 10.4.21(postcss@8.5.6)
       drizzle-kit:
-        specifier: ^0.31.4
+        specifier: ^0.31.5
         version: 0.31.5
       esbuild:
         specifier: ^0.25.0
