@@ -1,0 +1,222 @@
+{
+  "project": {
+    "name": "accounting-system",
+    "displayName": "النظام المحاسبي المتكامل",
+    "nameEn": "Integrated Accounting System",
+    "type": "web-app",
+    "version": "1.0.0",
+    "description": "نظام محاسبي احترافي مع مساعد ذكاء اصطناعي",
+    "descriptionEn": "Professional accounting system with AI assistant",
+    "author": "Manus AI",
+    "license": "MIT"
+  },
+  "github": {
+    "repo": "alabasi2025/accounting-system",
+    "branch": "main",
+    "token": "",
+    "autoUpdate": true,
+    "checkInterval": 3600,
+    "autoReport": true
+  },
+  "installation": {
+    "path": "C:\\Projects\\accounting-system",
+    "commands": {
+      "clone": "git clone https://github.com/alabasi2025/accounting-system.git .",
+      "install": "pnpm install",
+      "build": "pnpm build",
+      "start": "pnpm run dev",
+      "dbSetup": "pnpm db:push"
+    },
+    "env": {
+      "template": ".env.example",
+      "required": [
+        "DATABASE_URL",
+        "JWT_SECRET",
+        "PORT",
+        "VITE_APP_TITLE"
+      ],
+      "prompts": {
+        "DATABASE_URL": {
+          "message": "أدخل رابط الاتصال بقاعدة البيانات MySQL",
+          "messageEn": "Enter MySQL connection string",
+          "default": "mysql://root:@localhost:3306/accounting_system",
+          "example": "mysql://user:password@localhost:3306/dbname"
+        },
+        "JWT_SECRET": {
+          "message": "أدخل مفتاح JWT السري (اتركه فارغاً للتوليد التلقائي)",
+          "messageEn": "Enter JWT secret (leave empty to auto-generate)",
+          "generate": true,
+          "length": 64
+        },
+        "PORT": {
+          "message": "أدخل رقم المنفذ للخادم",
+          "messageEn": "Enter server port",
+          "default": "3000"
+        },
+        "VITE_APP_TITLE": {
+          "message": "أدخل اسم النظام",
+          "messageEn": "Enter system name",
+          "default": "النظام المحاسبي المتكامل"
+        }
+      }
+    }
+  },
+  "service": {
+    "enabled": true,
+    "name": "AccountingSystem",
+    "displayName": "النظام المحاسبي المتكامل",
+    "displayNameEn": "Integrated Accounting System",
+    "description": "نظام محاسبي احترافي مع قدرات الذكاء الاصطناعي",
+    "descriptionEn": "Professional accounting system with AI capabilities",
+    "startMode": "auto",
+    "executable": "node",
+    "arguments": "server/_core/index.js",
+    "workingDirectory": "C:\\Projects\\accounting-system",
+    "dependencies": [],
+    "restartDelay": 10000,
+    "restartOnFailure": true
+  },
+  "requirements": {
+    "node": {
+      "version": ">=18.0.0",
+      "downloadUrl": "https://nodejs.org/dist/v20.11.0/node-v20.11.0-x64.msi",
+      "required": true
+    },
+    "pnpm": {
+      "version": ">=8.0.0",
+      "installCommand": "npm install -g pnpm",
+      "required": true
+    },
+    "git": {
+      "version": ">=2.0.0",
+      "downloadUrl": "https://github.com/git-for-windows/git/releases/latest",
+      "required": true
+    },
+    "database": {
+      "type": "mysql",
+      "version": ">=8.0.0",
+      "required": true,
+      "setup": {
+        "createDatabase": true,
+        "databaseName": "accounting_system",
+        "charset": "utf8mb4",
+        "collation": "utf8mb4_unicode_ci"
+      }
+    },
+    "nssm": {
+      "version": ">=2.24",
+      "downloadUrl": "https://nssm.cc/release/nssm-2.24.zip",
+      "required": true,
+      "description": "مدير الخدمات لنظام Windows",
+      "descriptionEn": "Windows Service Manager"
+    },
+    "diskSpace": {
+      "minimum": 1073741824,
+      "recommended": 5368709120,
+      "unit": "bytes"
+    },
+    "ram": {
+      "minimum": 2147483648,
+      "recommended": 4294967296,
+      "unit": "bytes"
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "healthCheck": {
+      "url": "http://localhost:3000/health",
+      "interval": 60,
+      "timeout": 5,
+      "retries": 3
+    },
+    "logs": {
+      "path": "C:\\Projects\\accounting-system\\logs",
+      "maxSize": 104857600,
+      "retention": 7,
+      "compress": true
+    },
+    "performance": {
+      "cpu": {
+        "threshold": 80,
+        "alert": true
+      },
+      "memory": {
+        "threshold": 85,
+        "alert": true
+      },
+      "disk": {
+        "threshold": 90,
+        "alert": true
+      }
+    }
+  },
+  "backup": {
+    "enabled": true,
+    "path": "C:\\Backups\\accounting-system",
+    "schedule": "0 2 * * *",
+    "retention": 30,
+    "includeDatabase": true,
+    "includeLogs": false,
+    "excludePatterns": [
+      "node_modules",
+      "dist",
+      ".next",
+      "*.log",
+      "*.tmp",
+      ".cache"
+    ],
+    "compression": true,
+    "encryption": false
+  },
+  "errorReporting": {
+    "enabled": true,
+    "autoReport": true,
+    "includeSystemInfo": true,
+    "includeLogs": true,
+    "includeScreenshot": false,
+    "labels": [
+      "auto-reported",
+      "windows",
+      "production",
+      "accounting-system"
+    ],
+    "severity": {
+      "critical": true,
+      "error": true,
+      "warning": false
+    }
+  },
+  "updates": {
+    "channel": "stable",
+    "autoCheck": true,
+    "autoDownload": false,
+    "autoInstall": false,
+    "backupBeforeUpdate": true,
+    "rollbackOnFailure": true,
+    "notifyOwner": true,
+    "notificationEmail": "",
+    "checkInterval": 86400
+  },
+  "security": {
+    "firewall": {
+      "enabled": true,
+      "allowedPorts": [3000],
+      "allowedIPs": ["127.0.0.1", "localhost"]
+    },
+    "ssl": {
+      "enabled": false,
+      "certPath": "",
+      "keyPath": ""
+    },
+    "authentication": {
+      "required": true,
+      "method": "jwt",
+      "sessionTimeout": 3600
+    }
+  },
+  "localization": {
+    "defaultLanguage": "ar",
+    "supportedLanguages": ["ar", "en"],
+    "rtl": true
+  }
+}
