@@ -1,9 +1,9 @@
-# 🚀 مثبت النظام المحاسبي المتكامل
-# Integrated Accounting System Installer
+# 🚀 مثبت نظام العباسي الموحد
+# Alabasi Unified System Installer
 
-نظام تثبيت ذكي للنظام المحاسبي المتكامل مع تكامل GitHub والذكاء الاصطناعي.
+نظام تثبيت ذكي لنظام العباسي الموحد مع تكامل GitHub والتحديث التلقائي.
 
-Smart installation system for the Integrated Accounting System with GitHub integration and AI capabilities.
+Smart installation system for Alabasi Unified System with GitHub integration and automatic updates.
 
 ---
 
@@ -68,7 +68,7 @@ Will be installed automatically if not present:
 1. **تحميل المشروع / Download Project**
    ```bash
    git clone https://github.com/alabasi2025/accounting-system.git
-   cd accounting-system/installer
+   cd alabasi-unified-system/installer
    ```
 
 2. **تشغيل المثبت / Run Installer**
@@ -85,7 +85,7 @@ Will be installed automatically if not present:
 
 ```powershell
 # فتح PowerShell كمسؤول / Open PowerShell as Administrator
-cd accounting-system/installer
+cd alabasi-unified-system/installer
 .\Install-AccountingSystem.ps1
 ```
 
@@ -103,7 +103,7 @@ cd accounting-system/installer
 ### تحديث يدوي / Manual Update
 
 ```powershell
-cd accounting-system/installer
+cd alabasi-unified-system/installer
 .\scripts\Update-System.ps1
 ```
 
@@ -133,7 +133,7 @@ nssm remove AccountingSystem confirm
 ### الوصول إلى النظام / Access System
 
 - **URL المحلي / Local URL:** http://localhost:3000
-- **السجلات / Logs:** `C:\Projects\accounting-system\logs`
+- **السجلات / Logs:** `C:\Projects\alabasi-unified-system\logs`
 - **النسخ الاحتياطية / Backups:** `C:\Backups\accounting-system`
 
 ---
@@ -217,7 +217,7 @@ nssm status AccountingSystem
 nssm restart AccountingSystem
 
 # فحص السجلات
-Get-Content C:\Projects\accounting-system\logs\latest.log -Tail 50
+Get-Content C:\Projects\alabasi-unified-system\logs\latest.log -Tail 50
 ```
 
 ### المشكلة: خطأ في قاعدة البيانات / Database Error
